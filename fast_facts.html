@@ -198,7 +198,7 @@
     <button id="fixedBTN" class="dropbtn">Degrees Awarded</button>
     <div class="dropdown-content">
       <a href="javascript:void(0)"  class="subDrop activeClear" id="Degrees Awarded" title="degrees" onclick="highlightSub(this);changeText(this);selectDataset(this.title);">Degrees Awarded</a>
-      <a href="javascript:void(0)"  class="subDrop" id="Enrolment" title="enrolment" onclick="highlightSub(this);changeText(this);selectDataset(this.title);">Enrolment</a>
+      <a href="javascript:void(0)"  class="subDrop" id="Enrolment (FTE)" title="enrolment" onclick="highlightSub(this);changeText(this);selectDataset(this.title);">Enrolment (FTE)</a>
     </div>
   </div>
 </div>
@@ -397,9 +397,12 @@
   // Left Y Axis Setup
   var LyAxis = chart.yAxes.push(new am4charts.ValueAxis());
   LyAxis.calculateTotals = true;
-  var LyAxisRenderer = LyAxis.renderer;
-  LyAxisRenderer.grid.template.strokeOpacity = 0;
-  LyAxisRenderer.labels.template.disabled = false;
+  LyAxis.renderer.labels.template.fontSize = 10;
+  LyAxis.renderer.labels.template.stroke = "#c2bbbb";
+  LyAxis.renderer.labels.template.verticalCenter = "middle";
+  LyAxis.renderer.labels.template.horizontalCenter = "left";
+  LyAxis.renderer.grid.template.strokeOpacity = 0.05;
+  LyAxis.renderer.labels.template.disabled = false;
 
   LyAxis.min = 0;
   LyAxis.max = 1200;
@@ -506,7 +509,7 @@
     window[variableName].dataFields.valueY = field;
     window[variableName].dataFields.categoryX = "year";
     window[variableName].name = name;
-    window[variableName].columns.template.tooltipText = "{name}: [bold]{valueY}[/]";
+    window[variableName].columns.template.tooltipText = "{name} [bold]{valueY} students[/]";
     window[variableName].stacked = stacked;
     window[variableName].hiddenInLegend = hidden;
     window[variableName].columns.template.width = am4core.percent(95);
@@ -542,9 +545,34 @@
 
   // Add legend
   chart.legend = new am4charts.Legend();
-  chart.legend.fontSize = 11;
-  chart.legend.useDefaultMarker = false;
+  chart.legend.fontSize = 12;
+  chart.legend.useDefaultMarker = true;
   chart.legend.position = "top";
+  chart.legend.dy = -15;
+  var markerTemplate = chart.legend.markers.template;
+  markerTemplate.width = 20;
+  markerTemplate.height = 20;
+
+  // Add custom responsive settings (e.g. change text size when screen reaches certain size)
+  chart.responsive.useDefault = false
+  chart.responsive.enabled = true;
+  chart.responsive.rules.push({
+    relevant: function(target) {
+      if (target.pixelWidth <= 800) {
+        return true;
+      }
+
+      return false;
+    },
+    state: function(target, stateId) {
+      if (target instanceof am4charts.XYChart) {
+        var state = target.legend.states.create(stateId);
+        state.properties.fontSize = 9;
+        return state;
+      }
+      return null;
+    }
+  });
 
 </script>
 
