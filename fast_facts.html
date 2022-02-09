@@ -99,7 +99,7 @@
     position: relative;
     margin: 5px;
     margin-left: 20px;
-    width: 320px;
+    width: 300px;
     border-top: 2px solid #fdbf57;
   }
 
@@ -201,10 +201,10 @@
 </script>
 <div class="subjFilter">
   <div class="dropdown">
-    <button id="fixedBTN" class="dropbtn">Degrees Awarded</button>
+    <button id="fixedBTN" class="dropbtn">Enrolment (FTE)</button>
     <div class="dropdown-content">
-      <a href="javascript:void(0)"  class="subDrop activeClear" id="Degrees Awarded" title="degrees" onclick="highlightSub(this);changeText(this);selectDataset(this.title);">Degrees Awarded</a>
-      <a href="javascript:void(0)"  class="subDrop" id="Enrolment (FTE)" title="enrolment" onclick="highlightSub(this);changeText(this);selectDataset(this.title);">Enrolment (FTE)</a>
+      <a href="javascript:void(0)"  class="subDrop" id="Degrees Awarded" title="degrees" onclick="highlightSub(this);changeText(this);selectDataset(this.title);">Degrees Awarded</a>
+      <a href="javascript:void(0)"  class="subDrop activeClear" id="Enrolment (FTE)" title="enrolment" onclick="highlightSub(this);changeText(this);selectDataset(this.title);">Enrolment (FTE)</a>
     </div>
   </div>
 </div>
@@ -386,7 +386,7 @@
    }],
   }
   // Add data
-  chart.data = degrees.ugrd;
+  chart.data = enrolment.ugrd;
   chart.zoomOutButton.disabled = true;
 
   // X Axis Setup
@@ -411,7 +411,7 @@
   LyAxis.renderer.labels.template.disabled = false;
 
   LyAxis.min = 0;
-  LyAxis.max = 1200;
+  LyAxis.max = 6500;
 
   // Function used to toggle datasets and adjust settings
   function selectDataset() {
