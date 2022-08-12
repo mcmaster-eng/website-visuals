@@ -238,14 +238,6 @@
 
   var enrolment = {
    "ugrd": [{
-     "year": "2016-17",
-     "B.A.Sc.": 243,
-     "B.Eng.": 2994,
-     "B.Eng.BME.": 0,
-     "B.Eng. & Mgmt/Society": 720,
-     "B.Tech.": 927,
-     "none": 0
-   }, {
      "year": "2017-18",
      "B.A.Sc.": 207,
      "B.Eng.": 2845,
@@ -272,19 +264,21 @@
    },{
      "year": "2020-21",
      "B.A.Sc.": 370,
-     "B.Eng.": 3225,
+     "B.Eng.": 3255,
      "B.Eng.BME.": 487,
      "B.Eng. & Mgmt/Society": 692,
      "B.Tech.": 1267,
      "none": 0
+   },{
+     "year": "2021-22",
+     "B.A.Sc.": 468,
+     "B.Eng.": 3021,
+     "B.Eng.BME.": 572,
+     "B.Eng. & Mgmt/Society": 667,
+     "B.Tech.": 1330,
+     "none": 0
    }],
    "grad": [{
-     "year": "2016-17",
-     "M.A.Sc.": 272,
-     "M.Eng.": 157,
-     "Ph.D.": 371,
-     "none": 0
-   }, {
      "year": "2017-18",
      "M.A.Sc.": 323,
      "M.Eng.": 203,
@@ -308,19 +302,17 @@
      "M.Eng.": 202,
      "Ph.D.": 501,
      "none": 0
+   }, {
+     "year": "2021-22",
+     "M.A.Sc.": 259,
+     "M.Eng.": 366,
+     "Ph.D.": 515,
+     "none": 0
    }],
   }
 
   var degrees = {
    "ugrd": [{
-     "year": "2016-17",
-     "B.A.Sc.": 33,
-     "B.Eng.": 505,
-     "B.Eng.BME.": 0,
-     "B.Eng. & Mgmt/Society": 139,
-     "B.Tech.": 213,
-     "none": 0
-   }, {
      "year": "2017-18",
      "B.A.Sc.": 55,
      "B.Eng.": 558,
@@ -352,14 +344,16 @@
      "B.Eng. & Mgmt/Society": 167,
      "B.Tech.": 246,
      "none": 0
+   },{
+     "year": "2021-22",
+     "B.A.Sc.": 55,
+     "B.Eng.": 676,
+     "B.Eng.BME.": 0,
+     "B.Eng. & Mgmt/Society": 141,
+     "B.Tech.": 282,
+     "none": 0
    }],
    "grad": [{
-     "year": "2016-17",
-     "M.A.Sc.": 101,
-     "M.Eng.": 117,
-     "Ph.D.": 74,
-     "none": 0
-   }, {
      "year": "2017-18",
      "M.A.Sc.": 113,
      "M.Eng.": 113,
@@ -382,6 +376,12 @@
      "M.A.Sc.": 106,
      "M.Eng.": 218,
      "Ph.D.": 74,
+     "none": 0
+   }, {
+     "year": "2021-22",
+     "M.A.Sc.": 110,
+     "M.Eng.": 159,
+     "Ph.D.": 91,
      "none": 0
    }],
   }
@@ -435,7 +435,7 @@
     if (metric_clean == "degrees") {
       chart.data = degrees[edu_level];
       if (edu_level == "ugrd") {
-        LyAxis.max = 1200;
+        LyAxis.max = 1300;
       }
       else {
         LyAxis.max = 500;
@@ -447,7 +447,7 @@
         LyAxis.max = 6500;
       }
       else {
-        LyAxis.max = 1200;
+        LyAxis.max = 1300;
       }
     }
     chart.invalidateData();
