@@ -561,7 +561,7 @@
     else if (metric_clean == "enrolment") {
       chart.data = enrolment[edu_level];
       if (edu_level == "ugrd") {
-        LyAxis.max = 7000;
+        LyAxis.max = 8000;
       }
       else {
         LyAxis.max = 1400;
@@ -785,7 +785,7 @@
   LyAxis.renderer.grid.template.strokeOpacity = 0.01;
   LyAxis.renderer.labels.template.disabled = false;
   LyAxis.min = 0;
-  LyAxis.max = 7000;
+  LyAxis.max = 8000;
 
   // When webpage loads show the column charts
   createColumns();
