@@ -278,6 +278,22 @@
      "B.Eng. & Mgmt/Society": 667,
      "B.Tech.": 1330,
      "none": 0
+   },{
+     "year": "2022-23",
+     "B.A.Sc.": 555,
+     "B.Eng.": 3158,
+     "B.Eng.BME.": 599,
+     "B.Eng. & Mgmt/Society": 607,
+     "B.Tech.": 1461,
+     "none": 0
+   },{
+     "year": "2023-24",
+     "B.A.Sc.": 652,
+     "B.Eng.": 3248,
+     "B.Eng.BME.": 623,
+     "B.Eng. & Mgmt/Society": 595,
+     "B.Tech.": 1429,
+     "none": 0
    }],
    "grad": [{
      "year": "2017-18",
@@ -308,6 +324,18 @@
      "M.A.Sc.": 259,
      "M.Eng.": 366,
      "Ph.D.": 515,
+     "none": 0
+   }, {
+     "year": "2022-23",
+     "M.A.Sc.": 271,
+     "M.Eng.": 335,
+     "Ph.D.": 554,
+     "none": 0
+   }, {
+     "year": "2023-24",
+     "M.A.Sc.": 294,
+     "M.Eng.": 439,
+     "Ph.D.": 543,
      "none": 0
    }],
   }
@@ -353,6 +381,22 @@
      "B.Eng. & Mgmt/Society": 141,
      "B.Tech.": 282,
      "none": 0
+   },{
+     "year": "2022-23",
+     "B.A.Sc.": 61,
+     "B.Eng.": 607,
+     "B.Eng.BME.": 21,
+     "B.Eng. & Mgmt/Society": 135,
+     "B.Tech.": 301,
+     "none": 0
+   },{
+     "year": "2023-24",
+     "B.A.Sc.": 66,
+     "B.Eng.": 629,
+     "B.Eng.BME.": 83,
+     "B.Eng. & Mgmt/Society": 136,
+     "B.Tech.": 306,
+     "none": 0
    }],
    "grad": [{
      "year": "2017-18",
@@ -383,6 +427,18 @@
      "M.A.Sc.": 110,
      "M.Eng.": 159,
      "Ph.D.": 91,
+     "none": 0
+   }, {
+     "year": "2022-23",
+     "M.A.Sc.": 94,
+     "M.Eng.": 190,
+     "Ph.D.": 93,
+     "none": 0
+   }, {
+     "year": "2023-24",
+     "M.A.Sc.": 100,
+     "M.Eng.": 229,
+     "Ph.D.": 105,
      "none": 0
    }],
   }
@@ -423,6 +479,20 @@
      "B.Eng.BME.": 0.58,
      "B.Eng. & Mgmt/Society": 0.26,
      "B.Tech.": 0.16,
+   },{
+     "year": "2022-23",
+     "B.A.Sc.": 0.21,
+     "B.Eng.": 0.30,
+     "B.Eng.BME.": 0.60,
+     "B.Eng. & Mgmt/Society": 0.29,
+     "B.Tech.": 0.15,
+   },{
+     "year": "2023-24",
+     "B.A.Sc.": 0.21,
+     "B.Eng.": 0.34,
+     "B.Eng.BME.": 0.60,
+     "B.Eng. & Mgmt/Society": 0.35,
+     "B.Tech.": 0.16,
    }],
    "grad": [{
      "year": "2017-18",
@@ -449,6 +519,16 @@
      "M.A.Sc.": 0.30,
      "M.Eng.": 0.27,
      "Ph.D.": 0.30,
+   }, {
+     "year": "2022-23",
+     "M.A.Sc.": 0.28,
+     "M.Eng.": 0.25,
+     "Ph.D.": 0.32,
+   }, {
+     "year": "2023-24",
+     "M.A.Sc.": 0.33,
+     "M.Eng.": 0.24,
+     "Ph.D.": 0.31,
    }],
   }
   
@@ -481,10 +561,10 @@
     else if (metric_clean == "enrolment") {
       chart.data = enrolment[edu_level];
       if (edu_level == "ugrd") {
-        LyAxis.max = 6500;
+        LyAxis.max = 7000;
       }
       else {
-        LyAxis.max = 1300;
+        LyAxis.max = 1400;
       }
       LyAxis.numberFormatter = new am4core.NumberFormatter();
       LyAxis.numberFormatter.numberFormat = "#";
@@ -705,7 +785,7 @@
   LyAxis.renderer.grid.template.strokeOpacity = 0.01;
   LyAxis.renderer.labels.template.disabled = false;
   LyAxis.min = 0;
-  LyAxis.max = 6500;
+  LyAxis.max = 7000;
 
   // When webpage loads show the column charts
   createColumns();
